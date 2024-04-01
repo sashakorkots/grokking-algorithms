@@ -1,0 +1,23 @@
+{
+  "name": "grock_algoritthm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "binarySearch.js",
+  "type":"commonjs",
+  "scripts": {
+    "build": "npx babel src --out-dir lib",
+    "test": "npm run build & jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/preset-env": "^7.24.3",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.3",
+    "@babel/node": "^7.23.9"
+  }
+}
