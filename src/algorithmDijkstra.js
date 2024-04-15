@@ -25,10 +25,14 @@ function algorithmDijkstra(graph, start, end) {
 }
 
 function getSequence(target, allParents) {
-  const targetParent = allParents[target]
-  if (!targetParent)
-    return [target]
-  return [...getSequence(targetParent, allParents), target]
+  let targetParent = allParents[target]
+  const sequence = [target]
+  while (targetParent) {
+    sequence.unshift(targetParent)
+    targetParent = allParents[targetParent]
+  }
+  
+  return sequence
 }
 
 export default algorithmDijkstra
