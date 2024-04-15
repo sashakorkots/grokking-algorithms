@@ -5,7 +5,7 @@
   "main": "binarySearch.js",
   "type":"commonjs",
   "scripts": {
-    "build": "npx babel src --out-dir lib",
+    "build": "npx babel src --out-dir lib --delete-dir-on-start",
     "test": "npm run build & jest"
   },
   "author": "",
