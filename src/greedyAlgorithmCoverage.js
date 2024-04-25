@@ -35,15 +35,15 @@ function greedyAlgorithmCoverage(states, stationRelations) {
   let coveredStates = new Set()
   const usedStations = new Set()
   const notUsedStations = new Map(Object.entries(stationRelations)) 
+  let notCoveredStates = states
 
   while (coveredStates.size !== states.size && notUsedStations.size > 0) {
-    const notCoveredStates = states.difference(coveredStates)
     const station = getMaxUsefulStation(notUsedStations, notCoveredStates)
     if (!station)
       break 
     usedStations.add(station)
     notUsedStations.delete(station)
-    coveredStates = coveredStates.union(stationRelations[station])
+    notCoveredStates = notCoveredStates.difference(stationRelations[station])
   }
 
   return usedStations
